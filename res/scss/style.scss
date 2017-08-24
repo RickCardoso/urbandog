@@ -1,5 +1,14 @@
+// imports
 @import '../../ext_res/bootstrap/css/bootstrap';
+@import 'colors';
+@import 'fonts';
+@import 'metrics';
+@import 'mixins';
 
+// encoding
+@charset 'utf-8';
+
+// sass
 .mobileLogo {
   @extend .navbar-toggler;
   border: none;
