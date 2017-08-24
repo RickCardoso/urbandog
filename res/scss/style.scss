@@ -1,0 +1,6 @@
+@import '../../ext_res/bootstrap/css/bootstrap';
+
+.mobileLogo {
+  @extend .navbar-toggler;
+  border: none;
+}
