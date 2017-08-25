@@ -1,1 +1,51 @@
-/* MIXINS */
+@mixin crossTransition($trans) {
+  -webkit-transition: $trans;
+  -moz-transition: $trans;
+  -ms-transition: $trans;
+  -o-transition: $trans;
+  transition: $trans;
+}
+
+@mixin crossFilter($filters) {
+  -webkit-filter: $filters;
+  -moz-filter: $filters;
+  -ms-filter: $filters;
+  -o-filter: $filters;
+  filter: $filters;
+}
+
+@mixin crossBorder($rad) {
+  -webkit-border-radius: $rad;
+  -moz-border-radius: $rad;
+  -ms-border-radius: $rad;
+  -o-border-radius: $rad;
+  border-radius: $rad;
+}
+
+@mixin crossShadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  -ms-box-shadow: $shadow;
+  -o-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin marginX($left, $right: $left) {
+  margin-left: $left;
+  margin-right: $right;
+}
+
+@mixin marginY($top, $bottom: $top) {
+  margin-top: $top;
+  margin-bottom: $bottom;
+}
+
+@mixin paddingX($left, $right: $left) {
+  padding-left: $left;
+  padding-right: $right;
+}
+
+@mixin paddingY($top, $bottom: $top) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
