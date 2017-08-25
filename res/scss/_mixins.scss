@@ -22,6 +22,14 @@
   border-radius: $rad;
 }
 
+@mixin crossShadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  -ms-box-shadow: $shadow;
+  -o-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
 @mixin marginX($left, $right: $left) {
   margin-left: $left;
   margin-right: $right;
