@@ -6,6 +6,14 @@
   transition: $trans;
 }
 
+@mixin crossTransform($trans) {
+  -webkit-transform: $trans;
+  -moz-transform: $trans;
+  -ms-transform: $trans;
+  -o-transform: $trans;
+  transform: $trans;
+}
+
 @mixin crossFilter($filters) {
   -webkit-filter: $filters;
   -moz-filter: $filters;
@@ -30,7 +38,7 @@
   box-shadow: $shadow;
 }
 
-@mixin marginX($left, $right: $left) {
+@mixin marginX($right, $left: $right) {
   margin-left: $left;
   margin-right: $right;
 }
@@ -40,7 +48,7 @@
   margin-bottom: $bottom;
 }
 
-@mixin paddingX($left, $right: $left) {
+@mixin paddingX($right, $left: $right) {
   padding-left: $left;
   padding-right: $right;
 }
