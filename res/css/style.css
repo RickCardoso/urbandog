@@ -6464,7 +6464,104 @@ nav {
       width: 70%; } }
 
 .courseSection {
-  width: 1200px; }
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+  max-width: 1230px;
+  margin: 78px auto; }
+
+.courseTile {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  margin: 8px auto;
+  background-repeat: no-repeat;
+  background-size: contain; }
+  .courseTile:nth-child(odd) {
+    flex-flow: row; }
+    .courseTile:nth-child(odd) .courseTileText {
+      background-image: url("../../client_res/img/courses/bgOdd.png");
+      background-position: 100% 0; }
+  .courseTile:nth-child(even) {
+    flex-flow: row-reverse; }
+    .courseTile:nth-child(even) .courseTileText {
+      background-image: url("../../client_res/img/courses/bgEven.png");
+      background-position: 0 100%; }
+
+.courseTileImg {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0; }
+
+.courseTileText {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 50%;
+  max-width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+  padding: 80px;
+  color: #585858; }
+
+.courseIcon {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 18.1818181818%;
+  max-width: 18.1818181818%;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle; }
+
+.courseTileHeading {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 81.8181818182%;
+  max-width: 81.8181818182%;
+  padding: 0 0 0 42px;
+  margin-left: auto;
+  display: inline-block;
+  vertical-align: middle;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase; }
+  .courseTileHeading h1 {
+    font-size: 36.24px; }
+    .courseTileHeading h1 .highlight {
+      font-weight: 800; }
+  .courseTileHeading h2 {
+    font-size: 13.59px;
+    color: #9b9b9b; }
+
+.courseTileContent {
+  margin-top: 75px;
+  font-size: 14px; }
+  .courseTileContent ul {
+    line-height: 1.7;
+    padding-left: 0; }
+    .courseTileContent ul li {
+      background: url("../../client_res/img/courses/listIcon.png") 0 6px no-repeat;
+      list-style: none;
+      margin-top: 21px;
+      padding-left: 32px; }
 
 .site-footer {
   margin-right: auto;
@@ -6518,6 +6615,22 @@ nav {
   padding: 0 13px;
   vertical-align: text-top;
   text-align: left; }
+  .footer-col h1 {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #9b9b9b;
+    margin: 0; }
+  .footer-col ul {
+    padding-left: 0;
+    margin-top: 12px;
+    margin-bottom: 12px; }
+    .footer-col ul li {
+      list-style: none; }
+      .footer-col ul li ul {
+        padding-left: 12px;
+        margin-top: 0;
+        margin-bottom: 0; }
   @media screen and (min-width: 1330px) {
     .footer-col {
       flex: 0 0 14.2857142857%;
@@ -6535,22 +6648,21 @@ nav {
     .footer-col {
       flex: 0 0 50%;
       max-width: 50%; } }
-  .footer-col h1 {
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: #9b9b9b;
-    margin: 0; }
-  .footer-col ul {
-    padding-left: 0;
-    margin-top: 12px;
-    margin-bottom: 12px; }
-    .footer-col ul li {
-      list-style: none; }
-      .footer-col ul li ul {
-        padding-left: 12px;
-        margin-top: 0;
-        margin-bottom: 0; }
+  @media screen and (max-width: 413px) {
+    .footer-col {
+      flex: 0 0 100%;
+      max-width: 100%;
+      text-align: center; }
+      .footer-col ul {
+        padding-left: 0;
+        margin-top: 12px;
+        margin-bottom: 12px; }
+        .footer-col ul li {
+          list-style: none; }
+          .footer-col ul li ul {
+            padding-left: 0;
+            margin-top: 0;
+            margin-bottom: 0; } }
 
 .footer-link {
   padding-top: 6px;
