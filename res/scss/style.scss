@@ -316,7 +316,7 @@ nav {
 .courseSection,
 .groupSection,
 .privateSection,
-.testemonialSection,
+.testimonialSection,
 .actionBtnSection {
   @include make-container();
   position: relative;
@@ -571,7 +571,7 @@ nav {
   }
 }
 
-.enrollBtn,
+.enrolBtn,
 .seeMoreBtn {
   flex: 0 0 percentage(86/600);
   @include crossBorder(0);
@@ -584,7 +584,7 @@ nav {
   }
 }
 
-.enrollBtn {
+.enrolBtn {
   background: #da0684;
   color: #fbfbfb;
   &:hover,
@@ -758,6 +758,7 @@ nav {
     font-family: $raleway;
     font-size: 25px;
     color: #585858;
+    @include crossTransition(all .3s);
     & .highlight {
       font-weight: 800;
     }
@@ -770,20 +771,47 @@ nav {
     @include make-col(1, 1);
     max-width: 410px;
   }
+  &:hover {
+    & > .privateImg {
+      background: rgba(236, 0, 140, 0.5);
+    }
+    & > h1 {
+      text-decoration: underline;
+    }
+  }
 }
 
 .privateImg {
   max-width: 100%;
-  /* temp solution */
-    height: 380px;
-    object-fit: cover;
-  /* uncomment this block and remove block above when photos are square
-    height: auto;
-    */
+  overflow: hidden;
+  &#privateBehaviour {
+    background-image: url('../../client_res/img/private/dogBehaviour.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &#privateSports {
+    background-image: url('../../client_res/img/private/dogSports.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &#privateTraining {
+    background-image: url('../../client_res/img/private/advancedTraining.png');
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: 150%;
+  }
   @include crossBorder(50% 50% 10px 50%);
+  @include crossTransition(all .3s);
+  &:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
 }
 
-.testemonialSection {
+.testimonialSection {
   padding-top: 55px;
   max-width: 1280px;
   & h1 {
@@ -799,12 +827,12 @@ nav {
   }
 }
 
-.testemonialRow {
+.testimonialRow {
   @include make-row();
   justify-content: flex-end;
 }
 
-.testemonialCol {
+.testimonialCol {
   @include make-col-ready();
   @include make-col(570, 1120);
   @media screen and (max-width: $md) {
@@ -812,11 +840,11 @@ nav {
   }
 }
 
-.carouselTestemonial {
+.carouselTestimonial {
   padding-top: 50px;
 }
 
-.testemonialCarouselItem {
+.testimonialCarouselItem {
   padding: 0 15%;
   text-align: center;
   font-style: italic;
@@ -824,7 +852,7 @@ nav {
   font-size: 22px;
 }
 
-.testemonialCarouselCaption {
+.testimonialCarouselCaption {
   & p {
     margin: 22px 0 14px;
     color: #585858;
@@ -842,7 +870,7 @@ nav {
   }
 }
 
-.testemonialCarouselControl {
+.testimonialCarouselControl {
   position: absolute;
   top: 0;
   bottom: 0;
