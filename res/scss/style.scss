@@ -82,7 +82,7 @@ nav {
 .navItem {
   margin: 28px 23px 0;
   @media screen and (max-width: $lg) {
-    @include marginX(1.1vw);
+    @include marginX(1vw);
   }
   @media screen and (max-width: $md) {
     margin: 0;
@@ -117,20 +117,28 @@ nav {
     &:hover,
     &:focus,
     &:active {
-      background: $darkish-gray;
+      background: $white;
     }
   }
 }
 
 .navBar .navItem .dropdownMenu {
+  margin-top: -5px;
+  background: $super-dark-gray;
   & .navLink {
+    color: $white;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $primary;
+    }
     @media screen and (max-width: $md) {
       background: $dark-gray;
       color: $white;
       &:hover,
       &:focus,
       &:active {
-        background: $super-dark-gray;
+        background: $white;
         color: $primary;
       }
     }
@@ -712,28 +720,29 @@ nav {
   top: 50px;
   left: 50%;
   height: 1146px;
-  width: 1906px;
+  width: 100%;
   @include crossTransform(translateX(-50%));
   background-image: url('../../client_res/img/bg/big2.png');
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   background-position: center;
   @media screen and (max-width: $md) {
     background-image: url('../../client_res/img/bg/big.png');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center;
   }
 }
 
 .privateSection {
   @include paddingY(51px);
+  max-width: 100%;
 }
 
 .privateRow {
   @include make-row();
   justify-content: center;
-  margin: auto -15px;
+  margin: auto;
   max-width: 1230px;
 }
 
@@ -873,7 +882,6 @@ nav {
   text-transform: uppercase;
   color: #9c9c9c;
   @include crossGradient(linear-gradient(#cbcbcb, #e8e8e8));
-  @include crossShadow(0 0 2px 2px rgba(0,0,0,0.2));
   &:before {
     content: "";
     display: block;
@@ -884,12 +892,14 @@ nav {
     display: block;
     padding-bottom: 50%;
   }
+  @include crossTransition(all .3s);
   &:hover {
     background-image: url('../../client_res/img/bigButtons/bg.png');
-    background-position: 50% 50%;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: 105% 105%;
     color: #fff;
+    @include crossShadow(0 0 2px 2px rgba(0,0,0,0.2));
   }
   & h1 {
     position: absolute;
@@ -923,9 +933,202 @@ nav {
   }
 }
 
+.eBookBanner {
+  @include make-container();
+  background-image: url('../../client_res/img/banner/bgEbook.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.eBookContainer {
+  @include make-row();
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  @include paddingY(20px);
+  max-width: 1100px;
+  min-height: 187px;
+}
+
+.eBookText {
+  @include make-col-ready();
+  @include make-col(750, 1100);
+  @include marginY(10px);
+  & h1 {
+    font-size: 46.7px;
+    font-weight: 700;
+    color: #ec008c;
+    text-transform: uppercase;
+  }
+  & h2 {
+    font-size: 35.77px;
+    font-weight: 600;
+    color: #8a8a8a;
+    text-transform: uppercase;
+  }
+  @media screen and (max-width: $lg) {
+    & h1 {
+      font-size: 38px;
+    }
+    & h2 {
+      font-size: 30px;
+    }
+  }
+  @media screen and (max-width: $md) {
+    @include make-col(1, 1);
+    text-align: center;
+  }
+  @media screen and (max-width: $sm) {
+    & h1 {
+      font-size: 32px;
+    }
+    & h2 {
+      font-size: 26px;
+    }
+  }
+}
+
+.eBookBtn {
+  @include make-col-ready();
+  @include make-col(350, 1100);
+  @include marginY(10px);
+  text-align: right;
+  @media screen and (max-width: $md) {
+    @include make-col(1, 1);
+    text-align: center;
+  }
+}
+
+.eBookDownloadBtn {
+  background: transparent;
+  color: #ec008c;
+  border: 6px solid #ec008c;
+  @include crossBorder(41.5px);
+  font-size: 22.6px;
+  font-weight: 700;
+  text-transform: uppercase;
+  max-width: 296px;
+  width: 100%;
+  height: 83px;
+  &:hover,
+  &:focus,
+  &:active {
+    background: #ec008c;
+    color: #fff;
+  }
+}
+
+.subscriptionBanner {
+  background: #373737;
+}
+
+.subscriptionContainer {
+  @include make-row();
+  justify-content: center;
+  align-items: center;
+  max-width: 1230px;
+  min-height: 175px;
+  margin: auto;
+  @include paddingY(15px);
+}
+
+.bannerIcon {
+  @include make-col-ready();
+  @include make-col(1, 9);
+  margin: 15px auto;
+  @media screen and (max-width: $md) {
+    @include make-col(2, 9);
+    text-align: center;
+  }
+  @media screen and (max-width: $sm) {
+    @include make-col(2, 6);
+  }
+}
+
+.subscriptionText {
+  @include make-col-ready();
+  @include make-col(2, 9);
+  margin: 15px auto;
+  & h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: #fff;
+  }
+  @media screen and (max-width: $md) {
+    @include make-col(7, 9);
+  }
+  @media screen and (max-width: $sm) {
+    @include make-col(4, 6);
+  }
+  @media screen and (max-width: $xs) {
+    & h1 {
+      font-size: 22px;
+    }
+  }
+}
+
+.subscriptionEmail {
+  @include make-col-ready();
+  @include make-col(475, 1230);
+  margin: 15px auto;
+  @media screen and (max-width: $md) {
+    flex: 1 1 50%;
+    max-width: 50%;
+  }
+  @media screen and (max-width: $sm) {
+    @include make-col(1, 1);
+  }
+}
+
+.subscriptionBox {
+  width: 100%;
+  height: 57px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  @include crossShadow(0 2px 3px 3px rgba(0, 0, 0, 0.1));
+}
+
+.subscriptionBtn {
+  @include make-col-ready();
+  @include make-col(255, 1230);
+  margin: 15px auto;
+  @media screen and (max-width: $md) {
+    flex: 0 0 255px;
+    width: 255px;
+    max-width: 255px;
+  }
+  @media screen and (max-width: $sm) {
+    @include make-col(1, 1);
+    text-align: center;
+  }
+}
+
+.subscribeBtn {
+  max-width: 225px;
+  width: 100%;
+  height: 57px;
+  background: #ec008c;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  @include crossBorder(29.5px);
+  &:hover,
+  &:focus,
+  &:active {
+    background: #fff;
+    color: #ec008c;
+  }
+}
+
 .site-footer {
   @include make-container();
   background: #373737;
+  border-top: 2px solid #2d2d2d;
 }
 
 .footer-nav {
@@ -934,7 +1137,6 @@ nav {
   margin: auto;
   padding: 68px 0;
   justify-content: center;
-  border-top: 2px solid #2d2d2d;
 }
 
 .footer-head {

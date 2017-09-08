@@ -24,13 +24,31 @@ $(document).ready(function() {
     /* navigation bar animation */
     // on click rotate icon
       $('.dropdown-toggle').click(function() {
-        $(this).find('svg').toggleClass('up');
-      });
-    // on focusout rotate if is shown
-      $('.navLink').focusout(function() {
-        if ($(this).parent().hasClass('show')) {
+        if ($(window).width() <= 991) {
           $(this).find('svg').toggleClass('up');
         }
       });
+    // on focusout rotate if is shown
+      $('.navLink').focusout(function() {
+        if ($(window).width() <= 991) {
+          if ($(this).parent().hasClass('show')) {
+            $(this).find('svg').toggleClass('up');
+          }
+        }
+      });
+    // on hover for big screens
+        $('.navItem').hover(function() {
+          if ($(window).width() > 991) {
+            $(this).find('svg').toggleClass('up');
+            $(this).toggleClass('show');
+            $(this).find('.dropdownMenu').stop().slideDown(300);
+          }
+        }, function() {
+          if ($(window).width() > 991) {
+            $(this).find('svg').toggleClass('up');
+            $(this).toggleClass('show');
+            $(this).find('.dropdownMenu').slideUp(300);
+          }
+        });
 
 });

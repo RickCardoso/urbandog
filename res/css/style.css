@@ -6300,8 +6300,8 @@ nav {
   margin: 28px 23px 0; }
   @media screen and (max-width: 1199px) {
     .navItem {
-      margin-left: 1.1vw;
-      margin-right: 1.1vw; } }
+      margin-left: 1vw;
+      margin-right: 1vw; } }
   @media screen and (max-width: 991px) {
     .navItem {
       margin: 0; }
@@ -6334,20 +6334,27 @@ nav {
       padding: 15px 25px;
       background: #cccccc; }
       .navBar .navItem .navLink:hover, .navBar .navItem .navLink:focus, .navBar .navItem .navLink:active {
-        background: #535353; } }
+        background: #fff; } }
 
-@media screen and (max-width: 991px) {
+.navBar .navItem .dropdownMenu {
+  margin-top: -5px;
+  background: #333333; }
   .navBar .navItem .dropdownMenu .navLink {
-    background: #757575;
     color: #fff; }
     .navBar .navItem .dropdownMenu .navLink:hover, .navBar .navItem .dropdownMenu .navLink:focus, .navBar .navItem .dropdownMenu .navLink:active {
-      background: #333333;
-      color: #ed1495; } }
-@media screen and (max-width: 991px) {
-  .navBar .navItem .dropdownMenu {
-    margin: 0;
-    border: none;
-    padding: 0; } }
+      color: #ed1495; }
+    @media screen and (max-width: 991px) {
+      .navBar .navItem .dropdownMenu .navLink {
+        background: #757575;
+        color: #fff; }
+        .navBar .navItem .dropdownMenu .navLink:hover, .navBar .navItem .dropdownMenu .navLink:focus, .navBar .navItem .dropdownMenu .navLink:active {
+          background: #fff;
+          color: #ed1495; } }
+  @media screen and (max-width: 991px) {
+    .navBar .navItem .dropdownMenu {
+      margin: 0;
+      border: none;
+      padding: 0; } }
 
 .secondaryNav {
   background: transparent;
@@ -6906,7 +6913,7 @@ nav {
   top: 50px;
   left: 50%;
   height: 1146px;
-  width: 1906px;
+  width: 100%;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
@@ -6914,18 +6921,19 @@ nav {
   transform: translateX(-50%);
   background-image: url("../../client_res/img/bg/big2.png");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   background-position: center; }
   @media screen and (max-width: 991px) {
     .bigBg {
       background-image: url("../../client_res/img/bg/big.png");
       background-repeat: no-repeat;
-      background-size: 100% 100%;
+      background-size: cover;
       background-position: center; } }
 
 .privateSection {
   padding-top: 51px;
-  padding-bottom: 51px; }
+  padding-bottom: 51px;
+  max-width: 100%; }
 
 .privateRow {
   display: flex;
@@ -6933,7 +6941,7 @@ nav {
   margin-right: -15px;
   margin-left: -15px;
   justify-content: center;
-  margin: auto -15px;
+  margin: auto;
   max-width: 1230px; }
 
 .privateCol {
@@ -7091,11 +7099,11 @@ nav {
   background: -ms- linear-gradient(#cbcbcb, #e8e8e8);
   background: -o- linear-gradient(#cbcbcb, #e8e8e8);
   background: linear-gradient(#cbcbcb, #e8e8e8);
-  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
-  -ms-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
-  -o-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2); }
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
   .actionBtn:before {
     content: "";
     display: block;
@@ -7106,10 +7114,15 @@ nav {
     padding-bottom: 50%; }
   .actionBtn:hover {
     background-image: url("../../client_res/img/bigButtons/bg.png");
-    background-position: 50% 50%;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: 105% 105%;
-    color: #fff; }
+    color: #fff;
+    -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2); }
   .actionBtn h1 {
     position: absolute;
     top: 50%;
@@ -7147,13 +7160,240 @@ nav {
       .actionBtn h2 {
         font-size: 15px; } }
 
+.eBookBanner {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+  background-image: url("../../client_res/img/banner/bgEbook.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.eBookContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  max-width: 1100px;
+  min-height: 187px; }
+
+.eBookText {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 68.1818181818%;
+  max-width: 68.1818181818%;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+  .eBookText h1 {
+    font-size: 46.7px;
+    font-weight: 700;
+    color: #ec008c;
+    text-transform: uppercase; }
+  .eBookText h2 {
+    font-size: 35.77px;
+    font-weight: 600;
+    color: #8a8a8a;
+    text-transform: uppercase; }
+  @media screen and (max-width: 1199px) {
+    .eBookText h1 {
+      font-size: 38px; }
+    .eBookText h2 {
+      font-size: 30px; } }
+  @media screen and (max-width: 991px) {
+    .eBookText {
+      flex: 0 0 100%;
+      max-width: 100%;
+      text-align: center; } }
+  @media screen and (max-width: 767px) {
+    .eBookText h1 {
+      font-size: 32px; }
+    .eBookText h2 {
+      font-size: 26px; } }
+
+.eBookBtn {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 31.8181818182%;
+  max-width: 31.8181818182%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: right; }
+  @media screen and (max-width: 991px) {
+    .eBookBtn {
+      flex: 0 0 100%;
+      max-width: 100%;
+      text-align: center; } }
+
+.eBookDownloadBtn {
+  background: transparent;
+  color: #ec008c;
+  border: 6px solid #ec008c;
+  -webkit-border-radius: 41.5px;
+  -moz-border-radius: 41.5px;
+  -ms-border-radius: 41.5px;
+  -o-border-radius: 41.5px;
+  border-radius: 41.5px;
+  font-size: 22.6px;
+  font-weight: 700;
+  text-transform: uppercase;
+  max-width: 296px;
+  width: 100%;
+  height: 83px; }
+  .eBookDownloadBtn:hover, .eBookDownloadBtn:focus, .eBookDownloadBtn:active {
+    background: #ec008c;
+    color: #fff; }
+
+.subscriptionBanner {
+  background: #373737; }
+
+.subscriptionContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  justify-content: center;
+  align-items: center;
+  max-width: 1230px;
+  min-height: 175px;
+  margin: auto;
+  padding-top: 15px;
+  padding-bottom: 15px; }
+
+.bannerIcon {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 11.1111111111%;
+  max-width: 11.1111111111%;
+  margin: 15px auto; }
+  @media screen and (max-width: 991px) {
+    .bannerIcon {
+      flex: 0 0 22.2222222222%;
+      max-width: 22.2222222222%;
+      text-align: center; } }
+  @media screen and (max-width: 767px) {
+    .bannerIcon {
+      flex: 0 0 33.3333333333%;
+      max-width: 33.3333333333%; } }
+
+.subscriptionText {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 22.2222222222%;
+  max-width: 22.2222222222%;
+  margin: 15px auto; }
+  .subscriptionText h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: #fff; }
+  @media screen and (max-width: 991px) {
+    .subscriptionText {
+      flex: 0 0 77.7777777778%;
+      max-width: 77.7777777778%; } }
+  @media screen and (max-width: 767px) {
+    .subscriptionText {
+      flex: 0 0 66.6666666667%;
+      max-width: 66.6666666667%; } }
+  @media screen and (max-width: 575px) {
+    .subscriptionText h1 {
+      font-size: 22px; } }
+
+.subscriptionEmail {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 38.6178861789%;
+  max-width: 38.6178861789%;
+  margin: 15px auto; }
+  @media screen and (max-width: 991px) {
+    .subscriptionEmail {
+      flex: 1 1 50%;
+      max-width: 50%; } }
+  @media screen and (max-width: 767px) {
+    .subscriptionEmail {
+      flex: 0 0 100%;
+      max-width: 100%; } }
+
+.subscriptionBox {
+  width: 100%;
+  height: 57px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.1); }
+
+.subscriptionBtn {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 20.7317073171%;
+  max-width: 20.7317073171%;
+  margin: 15px auto; }
+  @media screen and (max-width: 991px) {
+    .subscriptionBtn {
+      flex: 0 0 255px;
+      width: 255px;
+      max-width: 255px; } }
+  @media screen and (max-width: 767px) {
+    .subscriptionBtn {
+      flex: 0 0 100%;
+      max-width: 100%;
+      text-align: center; } }
+
+.subscribeBtn {
+  max-width: 225px;
+  width: 100%;
+  height: 57px;
+  background: #ec008c;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  -webkit-border-radius: 29.5px;
+  -moz-border-radius: 29.5px;
+  -ms-border-radius: 29.5px;
+  -o-border-radius: 29.5px;
+  border-radius: 29.5px; }
+  .subscribeBtn:hover, .subscribeBtn:focus, .subscribeBtn:active {
+    background: #fff;
+    color: #ec008c; }
+
 .site-footer {
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
   width: 100%;
-  background: #373737; }
+  background: #373737;
+  border-top: 2px solid #2d2d2d; }
 
 .footer-nav {
   display: flex;
@@ -7163,8 +7403,7 @@ nav {
   max-width: 1300px;
   margin: auto;
   padding: 68px 0;
-  justify-content: center;
-  border-top: 2px solid #2d2d2d; }
+  justify-content: center; }
 
 .footer-head {
   position: relative;
