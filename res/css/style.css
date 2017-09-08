@@ -6397,8 +6397,8 @@ nav {
   width: 100%; }
 
 .carouselControlIcon {
-  font-size: 26px;
-  color: #ccc; }
+  font-size: 40px;
+  color: #333; }
   .carouselControlIcon:hover, .carouselControlIcon:focus, .carouselControlIcon:active {
     color: #ec008c; }
 
