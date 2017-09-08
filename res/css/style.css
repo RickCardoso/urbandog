@@ -6312,16 +6312,23 @@ nav {
   font-size: 12px;
   font-weight: 600;
   color: #535353; }
+  .navBar .navItem .navLink svg {
+    margin-left: 4px;
+    -webkit-transition: transform 0.3s;
+    -moz-transition: transform 0.3s;
+    -ms-transition: transform 0.3s;
+    -o-transition: transform 0.3s;
+    transition: transform 0.3s; }
+    .navBar .navItem .navLink svg.up {
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg); }
   .navBar .navItem .navLink:hover, .navBar .navItem .navLink:focus, .navBar .navItem .navLink:active {
     color: #ed1495; }
   .navBar .navItem .navLink::after {
-    border: none;
-    vertical-align: middle;
-    width: 14px;
-    height: 14px;
-    background-image: url("../../client_res/img/icon/dropDown.png");
-    background-repeat: no-repeat;
-    background-size: cover; }
+    display: none; }
   @media screen and (max-width: 991px) {
     .navBar .navItem .navLink {
       padding: 15px 25px;
@@ -6330,17 +6337,17 @@ nav {
         background: #535353; } }
 
 @media screen and (max-width: 991px) {
-  .navBar .navItem .dropdownMenu {
-    margin: 0;
-    border: none;
-    padding: 0; } }
-@media screen and (max-width: 991px) {
   .navBar .navItem .dropdownMenu .navLink {
     background: #757575;
     color: #fff; }
     .navBar .navItem .dropdownMenu .navLink:hover, .navBar .navItem .dropdownMenu .navLink:focus, .navBar .navItem .dropdownMenu .navLink:active {
       background: #333333;
       color: #ed1495; } }
+@media screen and (max-width: 991px) {
+  .navBar .navItem .dropdownMenu {
+    margin: 0;
+    border: none;
+    padding: 0; } }
 
 .secondaryNav {
   background: transparent;
@@ -6909,6 +6916,12 @@ nav {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center; }
+  @media screen and (max-width: 991px) {
+    .bigBg {
+      background-image: url("../../client_res/img/bg/big.png");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center; } }
 
 .privateSection {
   padding-top: 51px;
@@ -6969,9 +6982,10 @@ nav {
   border-radius: 50% 50% 10px 50%; }
 
 .testemonialSection {
-  padding-top: 55px; }
+  padding-top: 55px;
+  max-width: 1280px; }
   .testemonialSection h1 {
-    margin-bottom: 68px;
+    margin-bottom: 18px;
     font-family: "Raleway", sans-serif;
     font-size: 35px;
     text-transform: uppercase;
@@ -6993,12 +7007,36 @@ nav {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
-  flex: 0 0 53.5714285714%;
-  max-width: 53.5714285714%; }
+  flex: 0 0 50.8928571429%;
+  max-width: 50.8928571429%; }
+  @media screen and (max-width: 991px) {
+    .testemonialCol {
+      flex: 0 0 100%;
+      max-width: 100%; } }
+
+.carouselTestemonial {
+  padding-top: 50px; }
 
 .testemonialCarouselItem {
-  padding: 0 10%;
-  text-align: center; }
+  padding: 0 15%;
+  text-align: center;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 22px; }
+
+.testemonialCarouselCaption p {
+  margin: 22px 0 14px;
+  color: #585858; }
+  @media screen and (max-width: 575px) {
+    .testemonialCarouselCaption p {
+      font-size: 18px; } }
+.testemonialCarouselCaption h1 {
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: capitalize;
+  color: #777; }
 
 .testemonialCarouselControl {
   position: absolute;
@@ -7007,8 +7045,107 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 15%;
+  width: 10%;
   color: #fff; }
+
+.actionBtnSection {
+  padding-top: 0; }
+
+.actionBtnRow {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px; }
+
+.actionBtnCol {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 33.3333333333%;
+  max-width: 33.3333333333%;
+  margin: 30px auto; }
+  @media screen and (max-width: 575px) {
+    .actionBtnCol {
+      flex: 0 0 100%;
+      max-width: 100%; } }
+
+.actionBtn {
+  position: relative;
+  margin: auto;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  max-width: 290px;
+  width: 100%;
+  max-height: 290px;
+  height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #9c9c9c;
+  background: -webkit- linear-gradient(#cbcbcb, #e8e8e8);
+  background: -moz- linear-gradient(#cbcbcb, #e8e8e8);
+  background: -ms- linear-gradient(#cbcbcb, #e8e8e8);
+  background: -o- linear-gradient(#cbcbcb, #e8e8e8);
+  background: linear-gradient(#cbcbcb, #e8e8e8);
+  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2); }
+  .actionBtn:before {
+    content: "";
+    display: block;
+    padding-bottom: 50%; }
+  .actionBtn:after {
+    content: "";
+    display: block;
+    padding-bottom: 50%; }
+  .actionBtn:hover {
+    background-image: url("../../client_res/img/bigButtons/bg.png");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 105% 105%;
+    color: #fff; }
+  .actionBtn h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-80%);
+    -moz-transform: translateX(-50%) translateY(-80%);
+    -ms-transform: translateX(-50%) translateY(-80%);
+    -o-transform: translateX(-50%) translateY(-80%);
+    transform: translateX(-50%) translateY(-80%);
+    font-size: 41px;
+    font-weight: 700; }
+    @media screen and (max-width: 767px) {
+      .actionBtn h1 {
+        font-size: 32px; } }
+    @media screen and (max-width: 575px) {
+      .actionBtn h1 {
+        font-size: 41px; } }
+  .actionBtn h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(80%);
+    -moz-transform: translateX(-50%) translateY(80%);
+    -ms-transform: translateX(-50%) translateY(80%);
+    -o-transform: translateX(-50%) translateY(80%);
+    transform: translateX(-50%) translateY(80%);
+    width: 100%;
+    font-size: 15px;
+    font-weight: 700;
+    font-style: italic; }
+    @media screen and (max-width: 767px) {
+      .actionBtn h2 {
+        font-size: 13px; } }
+    @media screen and (max-width: 575px) {
+      .actionBtn h2 {
+        font-size: 15px; } }
 
 .site-footer {
   margin-right: auto;

@@ -21,4 +21,16 @@ $(document).ready(function() {
       }
     });
 
+    /* navigation bar animation */
+    // on click rotate icon
+      $('.dropdown-toggle').click(function() {
+        $(this).find('svg').toggleClass('up');
+      });
+    // on focusout rotate if is shown
+      $('.navLink').focusout(function() {
+        if ($(this).parent().hasClass('show')) {
+          $(this).find('svg').toggleClass('up');
+        }
+      });
+
 });
