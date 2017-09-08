@@ -216,12 +216,12 @@ nav {
 }
 
 .carouselControlIcon {
-  @include crossFilter(grayscale(100%));
-  @include crossTransition(all .3s);
+  font-size: 26px;
+  color: #ccc;
   &:hover,
   &:focus,
   &:active {
-    @include crossFilter(grayscale(0));
+    color: #ec008c;
   }
 }
 
@@ -794,9 +794,7 @@ nav {
 }
 
 .testemonialCarouselItem {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  padding: 0 10%; // TODO get this right
   text-align: center;
 }
 

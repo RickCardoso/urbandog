@@ -6397,11 +6397,10 @@ nav {
   width: 100%; }
 
 .carouselControlIcon {
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s; }
+  font-size: 26px;
+  color: #ccc; }
+  .carouselControlIcon:hover, .carouselControlIcon:focus, .carouselControlIcon:active {
+    color: #ec008c; }
 
 .carouselIndicators {
   bottom: -16px;
@@ -6998,9 +6997,7 @@ nav {
   max-width: 53.5714285714%; }
 
 .testemonialCarouselItem {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  padding: 0 10%;
   text-align: center; }
 
 .testemonialCarouselControl {
