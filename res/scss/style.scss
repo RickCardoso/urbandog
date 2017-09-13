@@ -1064,7 +1064,19 @@ nav {
 .bannerIcon {
   @include make-col-ready();
   @include make-col(1, 9);
+  position: relative;
   margin: 15px auto;
+  & p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include crossTransform(translateX(-50%) translateY(-50%));
+    margin: 0 -7.5px; // because of the column's 15px padding
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 13.78px;
+    font-weight: 600;
+  }
   @media screen and (max-width: $md) {
     @include make-col(2, 9);
     text-align: center;
@@ -1243,22 +1255,28 @@ nav {
 }
 
 .footer-link {
-  @include paddingY(6px);
+  display: block;
+  margin: 0;
   text-decoration: none;
   font-size: 12px;
   font-weight: 600;
-  line-height: 1;
+  color: #696969; //#807f7f;
+  line-height: 2;
+  padding-left: 16px;
+  text-indent: -16px;
+  @include crossTransition(none);
+  &::first-line {
+    color: #767575;
+  }
   &:hover,
   &:focus,
   &:active {
     color: #fff;
     text-decoration: none;
-  }
-  li & {
-    color: #767575;
-  }
-  li li & {
-    color: #696969;
+    &::first-line {
+      color: #fff;
+      text-decoration: none;
+    }
   }
 }
 
