@@ -1,0 +1,66 @@
+/* forms */
+input,
+select {
+  background-color: #f2f1f1;
+  border: 1px solid #c8c8c8;
+  @include crossBorder(0);
+  outline: none;
+  @include crossTransition(all .3s);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+select {
+  height: 30px;
+  &:hover {
+    background-color: lighten(#f2f1f1, 5%);
+  }
+  &:focus {
+    border-color: #df0687;
+  }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-appearance: none;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  max-width: 14px;
+}
+
+input[type="checkbox"] {
+  @include crossBorder(0);
+  &:checked {
+    content: url('../img/icon/check.svg');
+  }
+}
+
+input[type="radio"] {
+  @include crossBorder(50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    @include crossBorder(50%);
+    @include crossTransition(all .3s);
+  }
+  &:hover,
+  &:focus {
+    &:before {
+      background-color: #777;
+    }
+  }
+  &:checked {
+    &:before {
+      background-color: #df0687;
+    }
+  }
+}

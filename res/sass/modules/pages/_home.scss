@@ -1,0 +1,942 @@
+/* home */
+.carouselHeader {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.carouselControlIcon {
+  font-size: 40px;
+  color: #333;
+  &:hover,
+  &:focus,
+  &:active {
+    color: #ec008c;
+  }
+}
+
+.carouselIndicators {
+  bottom: -16px;
+  margin-bottom: 0;
+  & li {
+    @include crossBorder(50%);
+    border: 6px solid rgba(60, 60, 60, 0.15);
+    background: $lighter-gray;
+    background-clip: padding-box;
+    width: 24px;
+    height: 24px;
+    &:hover,
+    &:focus,
+    &:active {
+      background: $darkish-gray;
+      background-clip: padding-box;
+    }
+    &.active {
+      background: $primary;
+      background-clip: padding-box;
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+.carouselInner {
+  & .carouselItem { // general for all slides
+    & .carouselCaption {
+      color: $slide-text;
+      & h3 {
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        font-family: $font_heading;
+        font-size: 55.41px;
+        font-weight: 500;
+        text-shadow: 0 0 10px #fff;
+        & .highlight {
+          color: $primary;
+          font-weight: 800;
+        }
+        @include media-breakpoint-down(md) {
+          font-size: 42px;
+        }
+        @include media-breakpoint-down(sm) {
+          font-size: 38px;
+        }
+      }
+      & p {
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 600;
+        text-shadow: 0 0 10px #fff;
+        line-height: 1.3;
+        @include media-breakpoint-down(md) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  & .carouselItem:nth-child(1) { // specific for existing slide
+    & .carouselCaption {
+      top: 42%;
+      left: auto;
+      right: 21%;
+      width: 630px;
+      @include media-breakpoint-down(md) {
+        right: 15%;
+        text-align: right;
+        width: 500px;
+      }
+      @include media-breakpoint-down(sm) {
+        width: 450px;
+      }
+      @include media-breakpoint-down(xs) {
+        width: 70%;
+      }
+    }
+  }
+}
+
+.courseSection,
+.groupSection,
+.privateSection,
+.testimonialSection,
+.actionBtnSection {
+  @include make-container();
+  position: relative;
+  max-width: 1230px;
+  margin: auto;
+  @include paddingY(71px);
+}
+
+.courseTile {
+  @include make-row();
+  margin: 8px auto;
+  @include crossBorder(5px);
+  overflow: hidden;
+  @include crossShadow(0 0 3px 2px #eee);
+  &:nth-child(odd) {
+    flex-flow: row;
+    & .courseTileText {
+      background-image: url('../../res/img/courses/bgOdd.png');
+      background-position: 100% 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    @include media-breakpoint-down(md) {
+      flex-flow: column;
+    }
+  }
+  &:nth-child(even) {
+    flex-flow: row-reverse;
+    & .courseTileText {
+      background-image: url('../../res/img/courses/bgEven.png');
+      background-position: 0 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    @include media-breakpoint-down(md) {
+      flex-flow: column;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    max-width: 600px;
+  }
+}
+
+.courseTileImg {
+  @include make-col-ready();
+  flex: 0 1 50%;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+  padding: 0;
+  & img {
+    margin-left: 0;
+    @media screen and (max-width: 1100px) {
+      margin-left: -30%;
+    }
+    @include media-breakpoint-down(md) {
+      margin-left: 0;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    @include make-col(1, 1);
+  }
+}
+
+.courseTileText {
+  @include make-col-ready();
+  flex: 1 0 50%;
+  min-width: 600px;
+  color: #585858;
+  min-height: 503px;
+  @include media-breakpoint-down(md) {
+    @include make-col(1, 1);
+  }
+  @media screen and (max-width: 647px) {
+    min-width: 0;
+    flex: 1;
+  }
+}
+
+.courseTileHead {
+  margin: 80px 65px;
+  @include media-breakpoint-down(sm) {
+    margin: 50px 10vw;
+  }
+  @include media-breakpoint-down(xs) {
+    margin: 50px 5vw;
+  }
+}
+
+.courseIcon {
+  @include make-col-ready();
+  @include make-col(80, 440);
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.courseTileHeading {
+  @include make-col-ready();
+  @include make-col(360, 440);
+  padding: 0 0 0 42px;
+  margin-left: auto;
+  display: inline-block;
+  vertical-align: middle;
+  font-family: $font_heading;
+  text-transform: uppercase;
+  & h1 {
+    font-size: 36.24px;
+    & .highlight {
+      font-weight: 800;
+    }
+  }
+  & h2 {
+    font-size: 13.59px;
+    color: #9b9b9b;
+  }
+  @include media-breakpoint-down(xs) {
+    padding: 0 0 0 5vw;
+    & h1 {
+      font-size: 27px;
+    }
+  }
+}
+
+.courseTileContent {
+  margin: 80px 65px;
+  font-size: 14px;
+  & ul {
+    margin-bottom: 0;
+    padding-left: 0;
+    line-height: 1.7;
+    & li {
+      background: url('../../res/img/courses/listIcon.png') 0 6px no-repeat;
+      list-style: none;
+      margin-top: 21px;
+      padding-left: 32px;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    margin: 50px 10vw;
+  }
+  @include media-breakpoint-down(xs) {
+    margin: 50px 5vw;
+  }
+}
+
+.courseTileAction {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  margin: auto -15px;
+  max-width: 600px;
+  min-height: 100px;
+  @include crossShadow(0 -2px 3px 0 #eee);
+  @include media-breakpoint-down(sm) {
+    flex-wrap: wrap;
+  }
+}
+
+.courseTilePrice,
+.courseTileSeeMore {
+  flex: 1 1 percentage(214/600);
+  @include make-container();
+  @include media-breakpoint-down(sm) {
+    flex: 1 1 60%;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.courseTilePrice {
+  background: #e60089;
+  color: #fbfbfb;
+}
+
+.courseInfo {
+  @include make-row();
+  flex-direction: column;
+  & * {
+    font-family: $font_body;
+    font-size: 14px;
+    line-height: 1;
+  }
+  & h1 {
+    margin: 19px auto 5px 25px;
+    font-weight: 700;
+  }
+  & h2 {
+    margin: 0 auto 0 25px;
+    font-weight: 400;
+  }
+  @include media-breakpoint-down(sm) {
+    flex: 1 1 80%;
+    & h1 {
+      margin: 19px 19px 0;
+    }
+    & h2 {
+      margin: 0 19px 19px;
+    }
+  }
+}
+
+.coursePrice {
+  @include make-row();
+  flex-direction: column;
+  & * {
+    font-family: $font_body;
+    font-weight: 200;
+    line-height: 1;
+  }
+  & h1 {
+    margin: 0 25px 0 auto;
+    font-size: 20px;
+    & .highlight {
+      font-weight: 700;
+    }
+    @include media-breakpoint-down(xxs) {
+      font-size: 16px;
+    }
+  }
+  & h2 {
+    margin: 0 74px 3px auto;
+    font-size: 11px;
+  }
+  @include media-breakpoint-down(sm) {
+    flex: 1 1 20%;
+    & h1 {
+      margin: auto 19px 19px;
+    }
+    & h2 {
+      margin: 19px 19px auto;
+    }
+  }
+}
+
+.courseTileSeeMore {
+  background: #f9f9f9;
+  color: #585858;
+  & .seeMoreText {
+    @include make-row();
+    flex-direction: column;
+    margin: 0 4px;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    & p {
+      margin: 0;
+      font-family: $font_body;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+}
+
+.enrolBtn,
+.seeMoreBtn {
+  flex: 0 0 percentage(86/600);
+  @include crossBorder(0);
+  white-space: normal;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  @include media-breakpoint-down(xxs) {
+    font-size: 13px;
+  }
+}
+
+.enrolBtn {
+  background: #da0684;
+  color: #fbfbfb;
+  &:hover,
+  &:focus,
+  &:active {
+    background: #b7066f;
+  }
+}
+
+.seeMoreBtn {
+  background: #ecebeb;
+  color: #666;
+  &:hover,
+  &:focus,
+  &:active {
+    background: #ccc;
+  }
+}
+
+.groupRow {
+  @include make-row();
+  justify-content: center;
+  margin: auto;
+  @include crossBorder(5px);
+  overflow: hidden;
+  @include media-breakpoint-down(md) {
+    max-width: 400px;
+  }
+}
+
+.groupCol {
+  @include make-col-ready();
+  @include make-col(1, 3);
+  overflow: hidden;
+  display: flex;
+  padding: 0;
+  &:nth-child(odd) {
+    flex-direction: column;
+  }
+  &:nth-child(even) {
+    flex-direction: column-reverse;
+  }
+  @include media-breakpoint-down(md) {
+    @include make-col(1, 1);
+    &:nth-child(even) {
+      flex-direction: column;
+    }
+  }
+}
+
+.groupImg {
+  align-self: center;
+}
+
+.groupSplit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  @include crossTransform(translateX(-50%) translateY(-50%));
+  border: 4px solid #fff;
+  @include crossBorder(50%);
+  width: 79px;
+  height: 79px;
+  line-height: 71px;
+  text-align: center;
+  background: #ec008c;
+  color: #fefefe;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: $raleway;
+  font-weight: 600;
+  font-size: 14.56px;
+  @include crossTransition(all .3s);
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: #ec008c;
+    background: #fff;
+    color: #ec008c;
+    font-weight: 800;
+  }
+}
+
+.groupText {
+  background-image: url('../../res/img/groups/bgGroup.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  & h1 {
+    margin: 24px auto;
+    text-transform: uppercase;
+    font-family: $raleway;
+    font-size: 22px;
+    color: #585858;
+    & .highlight {
+      font-weight: 800;
+    }
+  }
+  & p {
+    margin: 0 46px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #515151;
+  }
+  & .seeMoreBtn {
+    flex: 0;
+    margin: 0 auto;
+    @include crossBorder(5px);
+    padding: 8px;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ec008c;
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+      background: #ec008c;
+      color: #fff;
+    }
+  }
+}
+
+.bigBg {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  height: 1146px;
+  width: 100%;
+  @include crossTransform(translateX(-50%));
+  background-image: url('../../res/img/bg/big2.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  @include media-breakpoint-down(md) {
+    background-image: url('../../res/img/bg/big.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.privateSection {
+  @include paddingY(51px);
+  max-width: 100%;
+}
+
+.privateRow {
+  @include make-row();
+  justify-content: center;
+  margin: auto;
+  max-width: 1230px;
+}
+
+.privateCol {
+  @include make-col-ready();
+  flex: 0 0 33.3%;
+  max-width: 409px;
+  overflow: hidden;
+  @include marginY(20px);
+  & h1 {
+    margin-top: 26px;
+    text-align: right;
+    text-transform: uppercase;
+    font-family: $raleway;
+    font-size: 25px;
+    color: #585858;
+    @include crossTransition(all .3s);
+    & .highlight {
+      font-weight: 800;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    flex: 0 0 50%;
+  }
+  @include media-breakpoint-down(sm) {
+    flex: 0 0 100%;
+  }
+  &:hover {
+    & > .privateImg {
+      &:after {
+        background-color: rgba(236, 0, 140, 0.2);
+      }
+    }
+    & > h1 {
+      text-decoration: underline;
+    }
+  }
+}
+
+.privateImg {
+  max-width: 100%;
+  overflow: hidden;
+  @include crossBorder(50% 50% 10px 50%);
+  @include crossTransition(all .3s);
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(236, 0, 140, 0);
+    @include crossBorder(50% 50% 10px 50%);
+    @include crossTransition(all .3s);
+  }
+}
+
+.testimonialSection {
+  padding-top: 55px;
+  max-width: 1280px;
+  & h1 {
+    margin-bottom: 18px;
+    font-family: $font_heading;
+    font-size: 35px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ec008c;
+    & .highlight {
+      font-weight: 800;
+    }
+  }
+}
+
+.testimonialRow {
+  @include make-row();
+  justify-content: flex-end;
+}
+
+.testimonialCol {
+  @include make-col-ready();
+  @include make-col(570, 1120);
+  @include media-breakpoint-down(md) {
+    @include make-col(1, 1);
+  }
+}
+
+.carouselTestimonial {
+  padding-top: 50px;
+}
+
+.testimonialCarouselItem {
+  padding: 0 15%;
+  text-align: center;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.testimonialCarouselCaption {
+  & p {
+    margin: 22px 0 14px;
+    color: #585858;
+    @include media-breakpoint-down(xs) {
+      font-size: 18px;
+    }
+  }
+  & h1 {
+    font-family: $font_body;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #777;
+  }
+}
+
+.testimonialCarouselControl {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+  color: #fff;
+}
+
+.actionBtnSection {
+  padding-top: 0;
+}
+
+.actionBtnRow {
+  @include make-row();
+}
+
+.actionBtnCol {
+  @include make-col-ready();
+  @include make-col(1, 3);
+  margin: 30px auto;
+  @include media-breakpoint-down(xs) {
+    @include make-col(1, 1);
+  }
+}
+
+.actionBtn {
+  position: relative;
+  margin: auto;
+  @include crossBorder(50%);
+  max-width: 290px;
+  width: 100%;
+  max-height: 290px;
+  height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #9c9c9c;
+  @include crossGradient(linear-gradient(#cbcbcb, #e8e8e8));
+  &:before {
+    content: "";
+    display: block;
+    padding-bottom: 50%;
+  }
+  &:after {
+    content: "";
+    display: block;
+    padding-bottom: 50%;
+  }
+  @include crossTransition(all .3s);
+  &:hover {
+    background-image: url('../../res/img/bigButtons/bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 105% 105%;
+    color: #fff;
+    @include crossShadow(0 0 2px 2px rgba(0,0,0,0.2));
+  }
+  & h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include crossTransform(translateX(-50%) translateY(-80%));
+    font-size: 41px;
+    font-weight: 700;
+    @include media-breakpoint-down(sm) {
+      font-size: 32px;
+    }
+    @include media-breakpoint-down(xs) {
+      font-size: 41px;
+    }
+  }
+  & h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include crossTransform(translateX(-50%) translateY(80%));
+    width: 100%;
+    font-size: 15px;
+    font-weight: 700;
+    font-style: italic;
+    @include media-breakpoint-down(sm) {
+      font-size: 13px;
+    }
+    @include media-breakpoint-down(xs) {
+      font-size: 15px;
+    }
+  }
+}
+
+.eBookBanner {
+  @include make-container();
+  background-image: url('../../res/img/banner/bgEbook.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.eBookContainer {
+  @include make-row();
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  @include paddingY(20px);
+  max-width: 1100px;
+  min-height: 187px;
+}
+
+.eBookText {
+  @include make-col-ready();
+  @include make-col(750, 1100);
+  @include marginY(10px);
+  & h1 {
+    font-size: 46.7px;
+    font-weight: 700;
+    color: #ec008c;
+    text-transform: uppercase;
+  }
+  & h2 {
+    font-size: 35.77px;
+    font-weight: 600;
+    color: #8a8a8a;
+    text-transform: uppercase;
+  }
+  @include media-breakpoint-down(lg) {
+    & h1 {
+      font-size: 38px;
+    }
+    & h2 {
+      font-size: 30px;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    @include make-col(1, 1);
+    text-align: center;
+  }
+  @include media-breakpoint-down(sm) {
+    & h1 {
+      font-size: 32px;
+    }
+    & h2 {
+      font-size: 26px;
+    }
+  }
+}
+
+.eBookBtn {
+  @include make-col-ready();
+  @include make-col(350, 1100);
+  @include marginY(10px);
+  text-align: right;
+  @include media-breakpoint-down(md) {
+    @include make-col(1, 1);
+    text-align: center;
+  }
+}
+
+.eBookDownloadBtn {
+  background: transparent;
+  color: #ec008c;
+  border: 6px solid #ec008c;
+  @include crossBorder(41.5px);
+  font-size: 22.6px;
+  font-weight: 700;
+  text-transform: uppercase;
+  max-width: 296px;
+  width: 100%;
+  height: 83px;
+  &:hover,
+  &:focus,
+  &:active {
+    background: #ec008c;
+    color: #fff;
+  }
+}
+
+.subscriptionBanner {
+  background: #373737;
+}
+
+.subscriptionContainer {
+  @include make-row();
+  justify-content: center;
+  align-items: center;
+  max-width: 1230px;
+  min-height: 175px;
+  margin: auto;
+  @include paddingY(15px);
+}
+
+.bannerIcon {
+  @include make-col-ready();
+  @include make-col(1, 9);
+  position: relative;
+  margin: 15px auto;
+  & p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include crossTransform(translateX(-50%) translateY(-50%));
+    margin: 0 -7.5px; // because of the column's 15px padding
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 13.78px;
+    font-weight: 600;
+  }
+  @include media-breakpoint-down(md) {
+    @include make-col(2, 9);
+    text-align: center;
+  }
+  @include media-breakpoint-down(sm) {
+    @include make-col(2, 6);
+  }
+}
+
+.subscriptionText {
+  @include make-col-ready();
+  @include make-col(2, 9);
+  margin: 15px auto;
+  & h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: #fff;
+  }
+  @include media-breakpoint-down(md) {
+    @include make-col(7, 9);
+  }
+  @include media-breakpoint-down(sm) {
+    @include make-col(4, 6);
+  }
+  @include media-breakpoint-down(xs) {
+    & h1 {
+      font-size: 22px;
+    }
+  }
+}
+
+.subscriptionEmail {
+  @include make-col-ready();
+  @include make-col(475, 1230);
+  margin: 15px auto;
+  @include media-breakpoint-down(md) {
+    flex: 1 1 50%;
+    max-width: 50%;
+  }
+  @include media-breakpoint-down(sm) {
+    @include make-col(1, 1);
+  }
+}
+
+.subscriptionBox {
+  padding-left: 15px;
+  width: 100%;
+  height: 57px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  @include crossShadow(0 2px 3px 3px rgba(0, 0, 0, 0.1));
+}
+
+.subscriptionBtn {
+  @include make-col-ready();
+  @include make-col(255, 1230);
+  margin: 15px auto;
+  @include media-breakpoint-down(md) {
+    flex: 0 0 255px;
+    width: 255px;
+    max-width: 255px;
+  }
+  @include media-breakpoint-down(sm) {
+    @include make-col(1, 1);
+    text-align: center;
+  }
+}
+
+.subscribeBtn {
+  max-width: 225px;
+  width: 100%;
+  height: 57px;
+  background: #ec008c;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  @include crossBorder(29.5px);
+  &:hover,
+  &:focus,
+  &:active {
+    background: #fff;
+    color: #ec008c;
+  }
+}

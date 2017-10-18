@@ -1,0 +1,56 @@
+/* colors */
+$pink-1: #ed1495;
+$pink-2: #e60089;
+$pink-3: #da0684;
+
+$super-dark-gray: #333333;
+$dark-gray: #757575;
+$darker-gray: #585858;
+$darkish-gray: #535353;
+$medium-gray: #9b9b9b;
+$light-gray: #bbbbbb;
+$lighter-gray: #cccccc;
+
+/* THEME COLORS */
+$primary: $pink-1;
+$secondary: $super-dark-gray;
+$complementary: $pink-1;
+
+// header
+$nav-btn: $darkish-gray;
+$login-btn: $light-gray;
+
+// intro
+$slide-text: $super-dark-gray;
+
+// courses
+$course-title: $darker-gray;
+$course-subtitle: $medium-gray;
+$course-content: $darker-gray;
+$price-bg: $pink-2;
+$price-enrol: $pink-3;
+
+
+/* fonts */
+$open-sans: 'Open Sans', sans-serif;
+$raleway: 'Raleway', sans-serif;
+/* THEME FONTS */
+$font_heading: $raleway;
+$font_body: $open-sans;
+
+
+/* structure */
+$site-width: 1230px;
+
+
+/* bootstrap overrides */
+$grid-breakpoints: (
+  xxs:  0,
+  xs:   414px,  // iPhone
+  sm:   576px,
+  md:   768px,
+  lg:   992px,
+  xl:   1200px,
+  xxl:  1600px, // larger desktops
+  xxxl: 1920px // largest desktops
+);

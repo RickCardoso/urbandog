@@ -1,0 +1,7 @@
+/* boxes */
+.sectionSplit {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  @include crossTransform(translateY(50%) translateX(-50%));
+}

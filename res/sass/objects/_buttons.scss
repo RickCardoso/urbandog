@@ -1,0 +1,35 @@
+/* buttons */
+.btn-std {
+  @include crossTransition(all .3s);
+  @include crossBorder(3px);
+}
+
+.btn-modal {
+  @include crossTransition(all .3s);
+  @include crossBorder(0);
+  background-color: #df0687;
+  max-width: 155px;
+  width: 100%;
+  height: 44px;
+  text-transform: uppercase;
+  color: #fbfbfb;
+  font-size: 1em;
+  line-height: 1.5;
+  &:hover,
+  &:focus {
+    background-color: darken(#df0687, 5%);
+  }
+}
+
+.btn-logo {
+  & svg {
+    fill: #ec008c;
+    @include crossTransition(all .3s);
+  }
+  &:hover,
+  &:focus {
+    & svg {
+      fill: darken(#ec008c, 5%);
+    }
+  }
+}

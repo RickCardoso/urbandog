@@ -1,0 +1,9 @@
+/* general structure */
+body {
+  background: #f6f6f6;
+}
+
+.page-wrap { // centralisation container
+  max-width: $site-width;
+  margin: auto;
+}
