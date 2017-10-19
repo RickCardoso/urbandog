@@ -96,4 +96,29 @@
     min-width: 14px;
     margin-right: 4px;
   }
+  & .custom-picker-block {
+    position: relative;
+    flex: 1 1 auto;
+    & input[type="date"].custom-picker {
+      width: 100%;
+      &::-webkit-inner-spin-button,
+      &::-webkit-calendar-picker-indicator,
+      &::-webkit-clear-button {
+        display: none;
+        -webkit-appearance: none;
+      }
+    }
+    & .date-picker {
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0.5em;
+      @include crossTransform(translateY(-50%));
+      color: #6f6f6f;
+      opacity: 0.75;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
 }

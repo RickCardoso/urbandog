@@ -241,13 +241,12 @@
           }
           & .input-wrap {
             @include make-input-group(auto);
-            padding: 13px 24px 13px 0;
+            flex: 0 0 175px;
+            padding: 13px 0;
             & label {
               margin-top: 0;
               margin-bottom: 0;
             }
-            // TODO: align items
-            // TODO: date picker (Downloads)
           }
         }
       }

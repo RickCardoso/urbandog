@@ -35,12 +35,15 @@ $(document).ready(function() {
 
   /* date picker */
     $('.date-picker').daterangepicker({
+      "parentEl": ".custom-picker-block",
       "singleDatePicker": true,
-      "startDate": "10/12/2017",
-      "endDate": "10/18/2017",
-      "opens": "left"
+      "opens": "left",
+      "locale": {
+        "format": "MM/DD/YYYY",
+        "separator": "-"
+      }
     }, function(start, end, label) {
-      console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+      $('.date-picker').parent().find('.custom-picker').val(start.format('YYYY-MM-DD'));
     });
 
 });

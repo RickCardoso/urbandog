@@ -64,3 +64,24 @@ input[type="radio"] {
     }
   }
 }
+
+// date-picker override
+.daterangepicker td.active,
+.daterangepicker td.active:hover {
+  background-color: #df0687;
+}
+.daterangepicker.dropdown-menu {
+  max-width: 100vw;
+  top: 26px !important;
+  right: 2px !important;
+  left: auto !important;
+  @include media-breakpoint-down(xs) {
+    right: -40px !important;
+    &:before {
+      right: 49px !important;
+    }
+    &:after {
+      right: 50px !important;          
+    }
+  }
+}
