@@ -1,0 +1,183 @@
+/* navigation */
+nav {
+  z-index: 1;
+}
+
+.mobileItem {
+  border: none;
+  color: $primary;
+  font-size: 22px;
+  height: 65px;
+  @include media-breakpoint-down(md) {
+    padding: 8px 24px;
+  }
+}
+
+.deskItem {
+  background: $white;
+  margin: 3px -42px 0 -33px;
+  @include paddingX(35px);
+  & a {
+    display: block;
+    padding: 8px;
+  }
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}
+
+.navBar {
+  border-bottom: 1px solid $light-gray;
+  height: 65px;
+  background: transparent;
+  z-index: 3;
+  @include media-breakpoint-down(md) {
+    padding: 0;
+  }
+}
+
+.navbarNav {
+  height: 65px;
+  @include media-breakpoint-down(md) {
+    height: auto;
+    border-bottom: 2px solid $darker-gray;
+    @include crossShadow(4px 0 3px 0 rgba(0, 0, 0, 0.2));
+  }
+}
+
+.navItem {
+  margin: 28px 23px 0;
+  @include media-breakpoint-down(lg) {
+    @include marginX(1vw);
+  }
+  @include media-breakpoint-down(md) {
+    margin: 0;
+    &:not(:first-child) {
+      border-top: 1px solid $dark-gray;
+    }
+  }
+}
+
+.navBar .navItem .navLink {
+  font-size: 12px;
+  font-weight: 600;
+  color: $nav-btn;
+  & svg {
+    margin-left: 4px;
+    @include crossTransition(transform .3s);
+    &.up {
+      @include crossTransform(rotate(180deg));
+    }
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: $primary;
+  }
+  &::after {
+    display: none;
+  }
+  @include media-breakpoint-down(md) {
+    padding: 15px 25px;
+    background: $lighter-gray;
+    &:hover,
+    &:focus,
+    &:active {
+      background: $white;
+    }
+  }
+}
+
+.navBar .navItem .dropdownMenu {
+  margin-top: -5px;
+  background: $super-dark-gray;
+  & .navLink {
+    color: $white;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $primary;
+    }
+    @include media-breakpoint-down(md) {
+      background: $dark-gray;
+      color: $white;
+      &:hover,
+      &:focus,
+      &:active {
+        background: $white;
+        color: $primary;
+      }
+    }
+  }
+  @include media-breakpoint-down(md) {
+    margin: 0;
+    border: none;
+    padding: 0;
+  }
+}
+
+.secondaryNav {
+  background: transparent;
+  max-width: 1064px;
+  margin: auto;
+  padding-top: 13px;
+}
+
+.loginBtn {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid $login-btn;
+  color: $login-btn;
+  font-size: 12px;
+  padding: 5px 20px 7px 18px;
+  font-weight: 600;
+  &:hover,
+  &:focus,
+  &:active {
+    background: $login-btn;
+    color: $white;
+  }
+}
+
+.socialNav {
+  padding-top: 4px;
+}
+
+.searchBtn {
+  display: inline-block;
+  padding: 3px;
+  line-height: 1;
+  background: transparent;
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.searchBox {
+  margin-top: 10px;
+  border-color: $secondary;
+  padding: 5px;
+  width: 0;
+  opacity: 0;
+  background: transparent;
+  font-size: 12px;
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: $primary;
+  }
+}
+
+.socialLink {
+  display: inline-block;
+  margin-left: 9px;
+  padding: 3px;
+  line-height: 1;
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 0.5;
+  }
+}

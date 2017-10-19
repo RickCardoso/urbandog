@@ -21,28 +21,29 @@ $(document).ready(function() {
       }
     });
 
-    /* navigation bar animation */
-    // on click rotate icon
-      $('.dropdown-toggle').click(function() {
+  /* navigation bar animation */
+  // on click rotate icon
+    $('.dropdown-toggle').click(function() {
+      $(this).find('svg').toggleClass('up');
+    });
+  // on focusout rotate if is shown
+    $('.navLink').focusout(function() {
+      if ($(this).parent().hasClass('show')) {
         $(this).find('svg').toggleClass('up');
-      });
-    // on focusout rotate if is shown
-      $('.navLink').focusout(function() {
-        if ($(this).parent().hasClass('show')) {
-          $(this).find('svg').toggleClass('up');
-        }
-      });
-    /* on hover for big screens
-        $('.navItem').hover(function() {
-          if ($(window).width() > 991) {
-            $(this).find('svg').toggleClass('up');
-            $(this).find('.dropdownMenu').stop().slideDown(300);
-          }
-        }, function() {
-          if ($(window).width() > 991) {
-            $(this).find('svg').toggleClass('up');
-            $(this).find('.dropdownMenu').slideUp(300);
-          }
-        });*/
+      }
+    });
+
+  /* date picker */
+    $('.date-picker').daterangepicker({
+      "parentEl": ".custom-picker-block",
+      "singleDatePicker": true,
+      "opens": "left",
+      "locale": {
+        "format": "MM/DD/YYYY",
+        "separator": "-"
+      }
+    }, function(start, end, label) {
+      $('.date-picker').parent().find('.custom-picker').val(start.format('YYYY-MM-DD'));
+    });
 
 });

@@ -1,0 +1,10 @@
+/* links */
+a {
+  @include crossTransition(all .3s);
+  color: #585858;
+  &:hover,
+  &:focus {
+    color: #df0687;
+    text-decoration: none;
+  }
+}

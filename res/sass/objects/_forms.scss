@@ -1,0 +1,87 @@
+/* forms */
+input,
+select {
+  background-color: #f2f1f1;
+  border: 1px solid #c8c8c8;
+  @include crossBorder(0);
+  outline: none;
+  @include crossTransition(all .3s);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+select {
+  height: 30px;
+  &:hover {
+    background-color: lighten(#f2f1f1, 5%);
+  }
+  &:focus {
+    border-color: #df0687;
+  }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-appearance: none;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  max-width: 14px;
+}
+
+input[type="checkbox"] {
+  @include crossBorder(0);
+  &:checked {
+    content: url('../img/icon/check.svg');
+  }
+}
+
+input[type="radio"] {
+  @include crossBorder(50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    @include crossBorder(50%);
+    @include crossTransition(all .3s);
+  }
+  &:hover,
+  &:focus {
+    &:before {
+      background-color: #777;
+    }
+  }
+  &:checked {
+    &:before {
+      background-color: #df0687;
+    }
+  }
+}
+
+// date-picker override
+.daterangepicker td.active,
+.daterangepicker td.active:hover {
+  background-color: #df0687;
+}
+.daterangepicker.dropdown-menu {
+  max-width: 100vw;
+  top: 26px !important;
+  right: 2px !important;
+  left: auto !important;
+  @include media-breakpoint-down(xs) {
+    right: -40px !important;
+    &:before {
+      right: 49px !important;
+    }
+    &:after {
+      right: 50px !important;          
+    }
+  }
+}

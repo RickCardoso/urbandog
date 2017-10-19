@@ -1,0 +1,128 @@
+/* footer */
+.site-footer {
+  @include make-container();
+  background: #373737;
+  border-top: 2px solid #2d2d2d;
+}
+
+.footer-nav {
+  @include make-row();
+  max-width: $site-width;
+  margin: auto;
+  padding: 68px 0;
+  justify-content: center;
+}
+
+.footer-head {
+  @include make-col-ready();
+  @media screen and (min-width: 1330px) {
+      @include make-col(1, 7);
+  }
+  @media screen and (max-width: 1329px) {
+      @include make-col(1, 1);
+      margin-bottom: 35px;
+  }
+  padding: 0 13px;
+  vertical-align: text-top;
+  text-align: center;
+  & .social-container {
+    margin-top: 15px;
+    & .socialLink {
+      @include marginX(0);
+    }
+  }
+}
+
+.footer-col {
+  @include make-col-ready();
+  padding: 0 13px;
+  vertical-align: text-top;
+  text-align: left;
+  & h1 {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #9b9b9b;
+    margin: 0;
+  }
+  & ul {
+    padding-left: 0;
+    @include marginY(12px);
+    & li {
+      list-style: none;
+      & ul {
+       padding-left: 12px;
+       @include marginY(0);
+      }
+    }
+  }
+  @media screen and (min-width: 1330px) {
+    @include make-col(1, 7);
+  }
+  @media screen and (max-width: 1329px) {
+    @include make-col(1, 6);
+  }
+  @include media-breakpoint-down(md) {
+    @include make-col(1, 3);
+    margin-top: 20px;
+  }
+  @include media-breakpoint-down(xs) {
+    @include make-col(1, 2);
+  }
+  @include media-breakpoint-down(xxs) {
+    @include make-col(1, 1);
+    text-align: center;
+    & ul {
+      padding-left: 0;
+      @include marginY(12px);
+      & li {
+        list-style: none;
+        & ul {
+         padding-left: 0;
+         @include marginY(0);
+        }
+      }
+    }
+  }
+}
+
+.footer-link {
+  display: block;
+  margin: 0;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: #696969; //#807f7f;
+  line-height: 2;
+  padding-left: 16px;
+  text-indent: -16px;
+  @include crossTransition(none);
+  &::first-line {
+    color: #767575;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff;
+    text-decoration: none;
+    &::first-line {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+.copyright {
+  @include make-row();
+  justify-content: center;
+  border-top: 2px solid #2d2d2d;
+  @include paddingY(30px);
+  background: #313131;
+  color: #373737;
+  font-size: 12px;
+  cursor: default;
+  @include crossTransition(all .3s);
+  &:hover {
+    color: $light-gray;
+  }
+}
