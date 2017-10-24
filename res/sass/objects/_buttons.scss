@@ -33,3 +33,18 @@
     }
   }
 }
+
+.btn-icon {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  &:focus {
+    outline: none;
+  }
+  &:hover,
+  &:active {
+    background-color: transparent;
+    color: #ec008c;
+  }
+}

@@ -126,7 +126,8 @@
                 '</div>' +
             '</div>';
 
-        this.parentEl = (options.parentEl && $(options.parentEl).length) ? $(options.parentEl) : $(this.parentEl);
+        // this.parentEl = (options.parentEl && $(options.parentEl).length) ? $(options.parentEl) : $(this.parentEl);
+        this.parentEl = (options.parentEl && $(options.parentEl).length) ? $(options.parentEl) : element.parent(); // hack to get parent element by Rick Cardoso
         this.container = $(options.template).appendTo(this.parentEl);
 
         //

@@ -14,12 +14,28 @@ nav {
 }
 
 .deskItem {
-  background: $white;
-  margin: 3px -42px 0 -33px;
-  @include paddingX(35px);
+  margin: 3px 2px 0;
   & a {
     display: block;
     padding: 8px;
+    &:before {
+      content: '';
+      width: 43.5vw;
+      height: 1px;
+      background-color: $light-gray;
+      position: absolute;
+      bottom: -1px;
+      right: 0;
+    }
+    &:after {
+      content: '';
+      width: 44.4vw;
+      height: 1px;
+      background: $light-gray;
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+    }
   }
   @include media-breakpoint-down(md) {
     display: none;
@@ -27,7 +43,6 @@ nav {
 }
 
 .navBar {
-  border-bottom: 1px solid $light-gray;
   height: 65px;
   background: transparent;
   z-index: 3;

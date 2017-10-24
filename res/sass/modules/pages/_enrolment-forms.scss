@@ -1,0 +1,75 @@
+.form-section {
+  & .page-wrap {
+    max-width: 1160px;
+  }
+}
+
+.form-container {
+  @include make-container();
+  padding-top: 3.25em;
+  & h2 {
+    font-size: 2.5em;
+    color: #585858;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+    & .highlight {
+      font-weight: 700;
+    }
+  }
+  & p {
+    margin-bottom: 2em;
+    font-size: 0.8125em;
+    color: #9b9b9b;
+  }
+  & .input-wrap {
+    @include make-input-group(29%);
+    margin: 0.625em auto;
+    &.short-1 {
+      @include make-input-group(45%);
+    }
+    &.short-2 {
+      @include make-input-group(60%);
+    }
+    &.short-3 {
+      @include make-input-group(75%);
+    }
+    &.long {
+      @include make-input-group(100%);
+    }
+    &.head {
+      @include make-input-group(100%);
+      border-bottom: 1px solid #aaa;
+      margin-top: 1em;
+      margin-bottom: 0;
+    }
+    &.radios {
+      & .input-wrap {
+        @include make-input-group(auto);
+        flex: 0 0 200px;
+      }
+    }
+    &.checks {
+      & .input-wrap {
+        @include make-input-group(auto);
+        flex: 0 0 50%;
+      }
+    }
+    @include media-breakpoint-down(xxs) {
+      @include make-input-group(100%);
+      &.short-1,
+      &.short-2,
+      &.short-3,
+      &.long {
+        @include make-input-group(100%);
+      }
+    }
+  }
+  & .form-col {
+    @include make-col-ready();
+    @include make-col(500, 1160);
+    padding-bottom: 3.25em;
+    @include media-breakpoint-down(sm) {
+      @include make-col(1, 1);
+    }
+  }
+}

@@ -35,7 +35,7 @@ $(document).ready(function() {
 
   /* date picker */
     $('.date-picker').daterangepicker({
-      "parentEl": ".custom-picker-block",
+      // "parentEl": ".custom-picker-block",
       "singleDatePicker": true,
       "opens": "left",
       "locale": {
@@ -43,7 +43,15 @@ $(document).ready(function() {
         "separator": "-"
       }
     }, function(start, end, label) {
-      $('.date-picker').parent().find('.custom-picker').val(start.format('YYYY-MM-DD'));
+      this.parentEl.find('.custom-picker').val(start.format('YYYY-MM-DD'));
+    });
+
+  // add/remove family members' forms
+    $('.add-family-member').click(function() {
+      $('#family-members').append($("#family-member-form-template").html());
+    });
+    $('body').on('click', '.remove-family-member', function() {
+      $(this).parent().parent().remove();
     });
 
 });
