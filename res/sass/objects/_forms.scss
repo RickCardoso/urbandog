@@ -1,5 +1,6 @@
 /* forms */
 input,
+textarea,
 select {
   background-color: #f2f1f1;
   border: 1px solid #c8c8c8;
@@ -12,6 +13,7 @@ input[type="text"],
 input[type="email"],
 input[type="date"],
 input[type="number"],
+textarea,
 select {
   height: 30px;
   &:hover {
@@ -34,6 +36,13 @@ input[type="radio"] {
 
 input[type="checkbox"] {
   @include crossBorder(0);
+  &:focus {
+    border-color: #777;
+  }
+  &:hover,
+  &:active {
+    border-color: #ec008c;
+  }
   &:checked {
     content: url('../img/icon/check.svg');
   }
@@ -55,7 +64,7 @@ input[type="radio"] {
   &:hover,
   &:focus {
     &:before {
-      background-color: #777;
+      background-color: #aaa;
     }
   }
   &:checked {
@@ -63,6 +72,15 @@ input[type="radio"] {
       background-color: #df0687;
     }
   }
+}
+
+input[type="file"] {
+  opacity: 0;
+  height: 100%;
+}
+
+textarea {
+  height: 80px;
 }
 
 // date-picker override
@@ -81,7 +99,7 @@ input[type="radio"] {
       right: 49px !important;
     }
     &:after {
-      right: 50px !important;          
+      right: 50px !important;
     }
   }
 }

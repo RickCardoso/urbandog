@@ -1,6 +1,55 @@
 /* header */
 .site-header {
   position: relative;
-  height: 780px;
+  min-height: 780px;
   margin-bottom: 5px;
+}
+
+#enrollment-form-hero {
+  background-image: url('../img/enrollment-form/bg-hero.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 367px;
+}
+
+.hero-wrap {
+  @include make-container();
+  padding-bottom: 3.125em;
+  max-width: 1160px;
+  & h1 {
+    font-size: 3.5em;
+    color: #333333;
+    text-transform: uppercase;
+    position: relative;
+    & .highlight {
+      font-weight: 700;
+      color: #ec008c;
+    }
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: -0.5em;
+      top: 0.1em;
+      width: 0.2em;
+      height: 0.85em;
+      background-color: #ec008c;
+    }
+  }
+  & p {
+    max-width: 650px;
+    margin-right: auto;
+    font-size: 1.125em;
+    font-weight: 600;
+    color: #333333;
+    text-transform: uppercase;
+    & a {
+      text-decoration: underline;
+      &:hover,
+      &:focus {
+        color: #ec008c;
+      }
+    }
+  }
 }

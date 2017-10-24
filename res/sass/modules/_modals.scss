@@ -235,18 +235,9 @@
       }
       & .modal-body {
         & .input-wrap.radios {
-          & label {
-            margin-top: 8px;
-            margin-bottom: 13px;
-          }
           & .input-wrap {
             @include make-input-group(auto);
             flex: 0 0 175px;
-            padding: 13px 0;
-            & label {
-              margin-top: 0;
-              margin-bottom: 0;
-            }
           }
         }
       }
